@@ -89,3 +89,11 @@ button:hover {
     position: absolute;
     top: 0;
 }
+
+.title.title{
+    display: flex;
+}
+
+.title{
+    display: none;
+}

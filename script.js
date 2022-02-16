@@ -38,6 +38,7 @@ let weather = {
         document.querySelector(".luftfugtighed").innerText = "Luftfugtighed: " + humidity + "%";
         document.querySelector(".vind").innerText = "Vind: " + speed + " km/t";
         document.querySelector(".weather").classList.remove("loading")
+        document.querySelector(".title").classList.remove("loading")
         document.body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?" + main + "')"
     },
         search: function() {

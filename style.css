@@ -90,10 +90,20 @@ button:hover {
     top: 0;
 }
 
-.title.title{
-    display: flex;
+.title.loading {
+    align-content: center;
+    text-align: center;
+    font-size: 140%;
+    font-family: 'Source Sans Pro', sans-serif;
+    display: block;
+    margin-bottom: 5px;
 }
 
-.title{
+.title {
+    transition: 0.2s ease-in-out;
     display: none;
+}
+
+button.CookiebotWidget-show-consent-details {
+    display: contents;
 }

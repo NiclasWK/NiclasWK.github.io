@@ -39,7 +39,8 @@ let weather = {
         document.querySelector(".vind").innerText = "Vind: " + speed + " km/t";
         document.querySelector(".weather").classList.remove("loading")
         document.querySelector(".title").classList.remove("loading")
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?" + main + "')"
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?weather," + main + "')"
+        document.title += " | " + name
     },
         search: function() {
                 this.fetchWeather(document.querySelector(".search-bar").value);

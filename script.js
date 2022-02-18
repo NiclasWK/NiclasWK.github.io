@@ -67,15 +67,15 @@ document.querySelector(".search button").addEventListener("click",
  function hasPara(){
      console.log("i run");
     let UrlPara = new URLSearchParams(window.location.search);
-    if(UrlPara.has('by')){
-        weather.fetchWeather(UrlPara.get('by'))
+    if(UrlPara.has('sted')){
+        weather.fetchWeather(UrlPara.get('sted'))
     }
 }
 
 function setPara(name){
     let UrlPara = new URLSearchParams(window.location.search);
-    UrlPara.delete('by')
-    UrlPara.set('by', name);
+    UrlPara.delete('sted')
+    UrlPara.set('sted', name);
     window.location.search = UrlPara
 }
 

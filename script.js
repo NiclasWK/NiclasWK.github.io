@@ -2,12 +2,14 @@ let weather = {
     apiKey: "be962b9f7eabe316a988c9e5b392b387",
 
     fetchWeather: function(city){
+
         function handleErrors(response) {
             if (!response.ok) {
                 throw Error(response.statusText);
             }
             return response;
         }
+
         fetch("https://api.openweathermap.org/data/2.5/weather?q="
         + city 
         + "&appid=" 
@@ -26,6 +28,7 @@ let weather = {
     },
 
     displayWeather: function(data) {
+
         const {name} = data;
         const {main, icon, description} = data.weather[0];
         const {temp, humidity } = data.main;
@@ -40,10 +43,13 @@ let weather = {
         document.querySelector(".weather").classList.remove("loading")
         document.querySelector(".title").classList.remove("loading")
         document.body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?weather," + main + "')"
-        document.title += " | " + name
+        document.title = "Vejr app" + " | " + name
+
     },
         search: function() {
-                this.fetchWeather(document.querySelector(".search-bar").value);
+                let name = document.querySelector(".search-bar").value
+                this.fetchWeather(name);
+                setPara(name)
         }
 };
 
@@ -57,5 +63,23 @@ document.querySelector(".search button").addEventListener("click",
             weather.search();
         }
  });
+
+ function hasPara(){
+     console.log("i run");
+    let UrlPara = new URLSearchParams(window.location.search);
+    if(UrlPara.has('by')){
+        weather.fetchWeather(UrlPara.get('by'))
+    }
+}
+
+function setPara(name){
+    let UrlPara = new URLSearchParams(window.location.search);
+    UrlPara.delete('by')
+    UrlPara.set('by', name);
+    window.location.search = UrlPara
+}
+
+
+
 
  

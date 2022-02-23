@@ -39,7 +39,7 @@ let weather = {
         document.querySelector(".beskrivelse").innerText = description;
         document.querySelector(".temp").innerText = temp + "°C";
         document.querySelector(".luftfugtighed").innerText = "Luftfugtighed: " + humidity + "%";
-        document.querySelector(".vind").innerText = "Vind: " + speed + " km/t";
+        document.querySelector(".vind").innerText = "Vind: " + speed + " m/s";
         document.querySelector(".weather").classList.remove("loading")
         document.querySelector(".title").classList.remove("loading")
         document.body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?weather," + main + "')"

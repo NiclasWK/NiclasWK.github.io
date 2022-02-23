@@ -48,7 +48,7 @@ let weather = {
     },
         search: function() {
                 let name = document.querySelector(".search-bar").value
-                this.fetchWeather(name);
+                //this.fetchWeather(name);
                 setPara(name)
         }
 };

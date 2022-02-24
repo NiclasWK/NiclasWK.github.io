@@ -37,7 +37,7 @@ let weather = {
         document.querySelector(".by").innerText = "Vejret i " + name;
         document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
         document.querySelector(".beskrivelse").innerText = description;
-        document.querySelector(".temp").innerText = temp + "°C";
+        document.querySelector(".temp").innerText = Math.ceil(temp) + "°C";
         document.querySelector(".luftfugtighed").innerText = "Luftfugtighed: " + humidity + "%";
         document.querySelector(".vind").innerText = "Vind: " + speed + " m/s";
         document.querySelector(".weather").classList.remove("loading")
